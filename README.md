@@ -1,6 +1,15 @@
-# Linux-icons-modifier (KDE required)
+# Linux-icons-modifier (KDE required) -- BETA (V-0.1)
+
+<br>
+
+<div align="center">
+  <img src="icons/linux_icons_modifier.png" width="200px"><br>
+</div>
+
+<br>
+
 ### __*KDE Plasma needs to be installed on your pc for this program to work. It will work even if there are multiple DE on your OS, you need at least KDE Plasma.*__
-A simple program written in Python (Tkinter) to switch between icons packs on Linux.
+A simple program written in Python (Tkinter) to switch between icons packs on Linux. I know this is already included in KDE Plasma but I will soon add an option to change icons directly on GNOME.
 
 *Linux icons modifier* is a simple python program that uses both the OS, tarfile, and Tkinter module from Python. [Tkinter](https://docs.python.org/3/library/tkinter.html) is used for the GUI (not the best I agree but for the moment I don't know how to make python app "prettier"), while [tarfile](https://docs.python.org/3/library/tarfile.html) is used to untar icons packs files, and [OS](https://docs.python.org/3/library/os.html) is used to use terminal commands in order to change the icons.
 
@@ -20,7 +29,9 @@ In order to add a new icon pack, you just need to download one from internet in 
 
 ## Other
 * You can change the icons with the dropdown list.
+* The dropdown list may contain file names, I'm going to solve this too but it should'nt hurt your pc if you choose an icon since it will simply not work.
 
 * Some icons may not change immediatly, I don't know how to solve this problem but I'm working on it, but it's normal if some don't seem to change, just restart your pc or click on them it must work.
 
-*
+* If you encounter any other bug, report it in this repo I'll do my best to solve it
+* I am not responsible for any damage caused to your OS, this program shouldn't harm your pc but it's a beta right now, just try it if you want to contribute or have fun.
