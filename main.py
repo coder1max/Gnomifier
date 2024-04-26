@@ -8,7 +8,9 @@ import os
 start = "/"
 root = Tk()
 
-root.title("Linux icons pack changer")
+icon = PhotoImage(file="icons/linux_icons_modifier.png")
+root.iconphoto(False, icon)
+root.title("Linux icons pack modifier")
 root.geometry("400x300")
 
 basic_icons_path = str(os.popen('gsettings get org.gnome.desktop.interface gtk-theme').read())
@@ -25,12 +27,12 @@ def fileImport():
         print("File can be extracted. Extracting...")
         extractFile(file)
     else:
-        error.grid(column=1, row=0)
+        error.pack(side=TOP)
 
 
 def extractFile(file):
     """
-    function that exctracts the icons file into the icons folder
+    function that extracts the icons file into the icons folder
     :return: None
     """
     file = tarfile.open(file)
@@ -44,7 +46,7 @@ def extractFile(file):
 
 def iconChange(folder):
     """
-    function that changes the default icons
+    function that changes the default icons with the extracted file
     :param folder: folder where the icons are stored
     :return: None
     """
@@ -54,7 +56,7 @@ def iconChange(folder):
 
 def restoreIcons():
     """
-    function that restores the default icons
+    restores the default icons
     :return: None
     """
     change_icons_path = str(os.popen('sudo find /usr -name plasma-changeicons').read())
@@ -62,18 +64,23 @@ def restoreIcons():
 
 
 def changingValue(event):
+    """
+    changes the current icon pack
+    :return: None
+    """
     change_icons_path = str(os.popen('sudo find /usr -name plasma-changeicons').read())
     os.system(change_icons_path.strip() + ' /usr/share/icons/' + str(selectedIcons.get()))
 
 
-error = Label(root, text="The fittkle isn't a .tar.xz file", fg="red")
+#Tkinter elements to display
+error = Label(root, text="The file isn't a .tar.xz file", fg="red")
 
 buttons = ttk.Frame(root)
 buttons.pack(pady=100)
-importButton = Button(buttons, text="Import file", fg="green", command=fileImport)
+importButton = Button(buttons, text="Import icon pack", fg="green", command=fileImport)
 importButton.pack(side=TOP)
-button2 = Button(buttons, text="Restore to default icons", fg="red", command=restoreIcons)
-button2.pack()
+restoreButton = Button(buttons, text="Restore to default icons", fg="red", command=restoreIcons)
+restoreButton.pack()
 foldersList = [name for name in os.listdir("/usr/share/icons/")]
 selectedIcons = tk.StringVar()
 liste = ttk.Combobox(root, values=foldersList, textvariable=selectedIcons)
