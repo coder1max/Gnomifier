@@ -3,7 +3,7 @@
 <br>
 
 <div align="center">
-  <img src="icons/linux_icons_modifier.png" width="200px"><br>
+  <img src="gnomifier-0.1/icons/gnomifier.png" width="200px"><br>
 </div>
 
 <br>
