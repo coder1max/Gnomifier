@@ -1,0 +1,6 @@
+Package: gnomifier
+Version: 0.1
+Architecture: all
+Maintainer: Maxime G <coder.un.max@gmail.com>
+Homepage: https://github.com/coder1max/Gnomifier
+Description: Change GNOME DE icons easily. With Gnomifier, changing icons on Gnome has never been easier. No terminal required. Just two buttons. And magic.
