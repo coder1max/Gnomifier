@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=Gnomifier
+Path=/usr/bin
+Exec=gnomifier
+Icon=/icons/gnomifier.png
+Terminal=False
+Categories=Gnome;Icons;DesktopEnvironnement;DE;
