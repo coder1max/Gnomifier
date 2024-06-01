@@ -17,6 +17,15 @@ class ComboBoxWindow(Gtk.Window):
         super().__init__(title="Gnomifier")
 
         vbox = Gtk.Box(orientation=Gtk.Orientation.VERTICAL, spacing=6)
+        # Create HeaderBar.
+        hb = Gtk.HeaderBar()
+        hb.set_show_close_button(True)
+        hb.props.title = "Gnomifier"
+        image = Gtk.Image(stock=Gtk.STOCK_HELP)
+        help_button = Gtk.Button(label="Help", image=image)
+        help_button.connect("clicked", self.on_help_clicked)
+        hb.add(help_button)
+        self.set_titlebar(hb)
 
         vbox.set_margin_top(20)
         vbox.set_margin_bottom(20)
@@ -24,13 +33,14 @@ class ComboBoxWindow(Gtk.Window):
         vbox.set_margin_end(20)
 
         # IMPORT FILE
-
         button1 = Gtk.Button(label="Import icon pack")
         button1.connect("clicked", self.on_file_clicked)
         vbox.add(button1)
+
         # LABEL
         dropdown_label = Gtk.Label(label="Choose an icon pack :")
         vbox.add(dropdown_label)
+
         # DROPDOWN LIST
         home_path = os.getenv("HOME")
         foldersList = [name for name in os.listdir("/usr/share/icons/")] + [name for name in os.listdir(
@@ -51,6 +61,44 @@ class ComboBoxWindow(Gtk.Window):
         vbox.pack_start(folders_combo, False, False, True)
 
         self.add(vbox)
+
+    def on_help_clicked(self, widget):
+        help_dialog = Gtk.Dialog(title="Help", transient_for=self, flags=0)
+        help_dialog.set_default_size(200, 0)
+
+        box = help_dialog.get_content_area()
+        box.set_margin_start(20)
+        box.set_margin_end(20)
+        title_1 = Gtk.Label()
+        title_1.set_markup("<b>What is Gnomifier ? </b>")
+        title_1.set_margin_top(20)
+        box.add(title_1)
+        description_1 = Gtk.Label()
+        description_1.set_markup("Gnomifier is a simple GTK app for Gnome DE to change the icon pack.")
+        description_1.set_line_wrap(True)
+        description_1.set_justify(Gtk.Justification.CENTER)
+        box.add(description_1)
+        title_2 = Gtk.Label()
+        title_2.set_markup("<b>How do I use it ?</b>")
+        title_2.set_margin_top(20)
+        box.add(title_2)
+        description_2 = Gtk.Label()
+        description_2.set_markup("You can either add a compressed icon pack by clicking 'Import icon pack', or change "
+                                 "the current icon pack applied to the system by clicking on the scrolldown menu.")
+        description_2.set_line_wrap(True)
+        description_2.set_justify(Gtk.Justification.CENTER)
+        box.add(description_2)
+        title_3 = Gtk.Label()
+        title_3.set_markup("<b>Support the project</b>")
+        title_3.set_margin_top(20)
+        box.add(title_3)
+        description_3 = Gtk.Label()
+        description_3.set_markup("<a href='https://github.com/coder1max/Gnomifier'>Source code</a>")
+        box.add(description_3)
+
+        help_dialog.show_all()
+        help_dialog.run()
+        help_dialog.destroy()
 
     def on_file_clicked(self, widget):
         """
