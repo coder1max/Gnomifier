@@ -1,5 +1,10 @@
-gnomifier (0.1) UNRELEASED; urgency=low
+gnomifier(0.1.2) unstable; urgency=low
+    [Maxime G]
+    * Added 'help' button, which shows how to use the app, and a link to the source code.
+    -- Maxime G <coder.un.max@gmail.com> Mon, 27 May 2024 13:50:00 +0100
 
-  * First release
-  - First release of the app !
- -- Maxime G <coder.un.max@gmail.com>  Sun, 26 May 2024 16:28:00 +0100
+gnomifier (0.1) UNRELEASED; urgency=low
+    [Maxime G]
+    * First release of the app !
+    -- Maxime G <coder.un.max@gmail.com>  Sun, 26 May 2024 16:28:00 +0100
+
