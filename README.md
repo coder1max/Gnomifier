@@ -1,5 +1,5 @@
 # Gnomifier (Gnome required) -- BETA (V-0.1)
-d
+
 <br>
 
 <div align="center">
