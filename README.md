@@ -1,4 +1,4 @@
-# Gnomifier (Gnome required) -- BETA (V-0.1)
+# Gnomifiiier (Gnome required) -- BETA (V-0.1)
 
 <br>
 
